@@ -1,0 +1,21 @@
+{
+  "name": "bower",
+  "description": "a project for pack",
+  "main": "",
+  "authors": [
+    "guo <761969929@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/76196/P2P",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}

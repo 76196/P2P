@@ -2,6 +2,7 @@
   "name": "P2P",
   "version": "0.0.1",
   "dependencies": {
-    
+    "less": "^2.7.3",
+    "node": "^9.3.0"
   }
 }

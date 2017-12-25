@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import "../../bower_components/font-awesome/css/font-awesome.css";
+/*全局变量*/
+/*全局通用样式*/
+body {
+  font-family: 微软雅黑;
+  font-size: 14px;
+}
+/*顶栏样式*/
+.el-topBar {
+  border-radius: 0px;
+}
+.el-topBar .navbar {
+  margin-bottom: 0px;
+}
+.el-topBar .navbar-header a span {
+  margin-right: 10px;
+}
+.el-topBar #topBar ul > li a {
+  color: #ffffff;
+}
+.el-topBar #topBar ul > li a:hover {
+  color: #3C37AA;
+  text-decoration: underline;
+}
+.el-topBar #topBar ul > li a span {
+  margin: 5px;
+}
+/*导航栏样式*/
+.el-navBar {
+  background: #f8f8f8;
+}
+.el-navBar #topBar ul > li a {
+  font-family: 微软雅黑;
+  font-size: 20px;
+  margin: 9px;
+  color: #555;
+}
+.el-navBar #topBar span {
+  margin-right: -6px;
+}
+/*页面内容样式*/
+.el-main {
+  height: 500px;
+  background: #ffffff;
+}
+/*底部样式*/
+.el-footer {
+  height: 60px;
+  background: #f00;
+}
