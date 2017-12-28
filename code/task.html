@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTask</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="css/task.css">
+</head>
+<body>
+<div style="background: #0a0;  height: 200px ; margin: 10px ;width: 100%" >
+    <div style="width: 50% ; background: gray ; height: 66px"></div>
+</div>
+    <div class="wrapper">
+        <header class=""><h1>希望清单</h1></header>
+        <nav id="my">
+            <ul >
+                <li><a data-page="addTask" class="active">任务列表</a></li>
+                <li><a data-page="taskList">添加任务</a></li>
+                <li><a data-page="memo">备忘录</a></li>
+            </ul>
+        </nav>
+        <section id="addTask" >
+            1
+        </section>
+
+        <section id="taskList">
+            <form action="">
+                <div id="top">
+                    <h3>内容</h3>
+                    <textarea type="text" rows="5"></textarea>
+                </div>
+                <div id="bottom">
+                    <h3>日期</h3>
+                </div>
+                <button >submit</button>
+            </form>
+        </section>
+
+        <section id="memo">
+
+        </section>
+    </div>
+    <script type="text/javascript">
+        $(function(){
+            $("nav ul li a").on("click", function () {
+                /*清除样式*/
+                $("nav ul li a").removeClass("active");
+                $(this).addClass("active");
+                /*隐藏所有section*/
+                $("#addTask,#taskList,#memo").hide();
+                /*获取当前标签data属性*/
+                var page =$(this).data("page");
+                $("#"+page).show();
+            })
+        });
+    </script>
+</body>
+</html>
