@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="css/task.css">
 </head>
 <body>
-<div style="background: #0a0;  height: 200px ; margin: 10px ;width: 100%" >
-    <div style="width: 50% ; background: gray ; height: 66px"></div>
-</div>
     <div class="wrapper">
         <header class=""><h1>希望清单</h1></header>
         <nav id="my">
@@ -20,19 +17,27 @@
             </ul>
         </nav>
         <section id="addTask" >
-            1
+
         </section>
 
+
         <section id="taskList">
-            <form action="">
+            <form >
+                <div id="title">
+                    <h3>主题</h3>
+                    <textarea name="title" type="text"></textarea>
+                </div>
                 <div id="top">
                     <h3>内容</h3>
-                    <textarea type="text" rows="5"></textarea>
+                    <textarea name="desc" type="text" rows="5"></textarea>
                 </div>
                 <div id="bottom">
-                    <h3>日期</h3>
+                    <lable>
+                        日期
+                        <input name="duedate" type="date">
+                    </lable>
                 </div>
-                <button >submit</button>
+                <button id="addBtn" >submit</button>
             </form>
         </section>
 
@@ -51,8 +56,55 @@
                 /*获取当前标签data属性*/
                 var page =$(this).data("page");
                 $("#"+page).show();
-            })
+            });
+
+                /*遍历本地存储*/
+                for(var i=0;i<localStorage.length;i++){
+                    var taskStr=localStorage.getItem(localStorage.key(i));
+                    console.log(localStorage.key);
+                    var taskObj=JSON.parse(taskStr);
+                    /*创建文本节点*/
+                        $("#addTask").append("<article>\n" +
+                            "                <div class=\"left-box\">\n" +
+                            "                    <input name=\"complete\" type=\"checkbox\">\n" +
+                            "                </div>\n" +
+                            "                <div class=\"center-box\">\n" +
+                            "                    <h5></h5>\n" +
+                            "                    <time></time>\n" +
+                            "                </div>\n" +
+                            "                <div class=\"right-box\">\n" +
+                            "                    <button>删除</button>\n" +
+                            "                </div>\n" +
+                            "            </article>\n");
+                        console.log(taskObj.title);
+                        $(".center-box h5").text(taskObj.title);
+                        $(".center-box time").text(taskObj.date);
+            }
+
+            /*提交按钮事件绑定*/
+            $("#addBtn").on("click",function () {
+                /*获取表单数据*/
+                var titleValue=$("textarea[name=title]").val();
+                var descValue=$("textarea[name=desc]").val();
+                var dateValue=$("input[name=duedate]").val();
+                /*把内容封装成一个新对象*/
+                var newTask={"title":titleValue,"desc":descValue,"date":dateValue};
+                //console.log(newTask);
+                var taskStr=JSON.stringify(newTask);
+                //console.log(taskStr);
+                localStorage.setItem(titleValue,taskStr);
+                /*获取本地存储*/
+
+
+
+
+
+
+            });
+
         });
+
+
     </script>
 </body>
 </html>

@@ -12,6 +12,7 @@ html,body{
 .wrapper{
   width: 880px;
   height: 100%;
+  overflow-y:auto;
   margin: 0 auto;
   border: gray solid 1px;
 }
@@ -43,6 +44,7 @@ nav{
              padding:5px 10px;
              margin:4px 10px;
              border-radius: 10px;
+             cursor:pointer ;
            }
 }
 .active{
@@ -64,6 +66,57 @@ nav{
         width: 100%;
       }
     }
-
+    #bottom{
+      lable{
+        font-size: 18px;
+      }
+      input{
+        width:200px;
+        height: 26px;
+        margin-left:20px;
+      }
+    }
+    #addBtn{
+      background: #0a0;
+      color: #0f0f0f;
+      border: none;
+      width: 90px;
+      height: 30px;
+      margin-top: 3px;
+      border-radius: 6px;
+    }
   }
+}
+#addTask{
+  article{
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    overflow: hidden;
+    div{
+      float: left;
+      padding-right: 10px;
+    }
+    time{
+      font-size: 0.7em;
+      color:#999999;
+      font-family: "微软雅黑";
+      cursor: pointer;
+    }
+    h5{
+      cursor: pointer;
+    }
+    .right-box{
+      float: right;
+      button{
+        background: #ad390c;
+        color:#ffffff;
+        border-radius: 5px;
+        border :0;
+        padding: 7px;
+        cursor: pointer;
+
+      }
+    }
+  }
+
 }

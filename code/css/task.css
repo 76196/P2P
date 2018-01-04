@@ -12,6 +12,7 @@ body {
 .wrapper {
   width: 880px;
   height: 100%;
+  overflow-y: auto;
   margin: 0 auto;
   border: gray solid 1px;
 }
@@ -44,6 +45,7 @@ nav a {
   padding: 5px 10px;
   margin: 4px 10px;
   border-radius: 10px;
+  cursor: pointer ;
 }
 .active {
   color: #0099CC;
@@ -65,4 +67,50 @@ nav a {
 }
 #taskList form #top textarea {
   width: 100%;
+}
+#taskList form #bottom lable {
+  font-size: 18px;
+}
+#taskList form #bottom input {
+  width: 200px;
+  height: 26px;
+  margin-left: 20px;
+}
+#taskList form #addBtn {
+  background: #0a0;
+  color: #0f0f0f;
+  border: none;
+  width: 90px;
+  height: 30px;
+  margin-top: 3px;
+  border-radius: 6px;
+}
+#addTask article {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  overflow: hidden;
+}
+#addTask article div {
+  float: left;
+  padding-right: 10px;
+}
+#addTask article time {
+  font-size: 0.7em;
+  color: #999999;
+  font-family: "微软雅黑";
+  cursor: pointer;
+}
+#addTask article h5 {
+  cursor: pointer;
+}
+#addTask article .right-box {
+  float: right;
+}
+#addTask article .right-box button {
+  background: #ad390c;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 0;
+  padding: 7px;
+  cursor: pointer;
 }
